@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Raylib",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "$ErrorActionPreference = 'Stop'; New-Item -ItemType Directory -Force -Path 'build' | Out-Null; & 'C:\\raylib\\w64devkit\\bin\\gcc.exe' '-B' 'C:\\raylib\\w64devkit\\bin\\' '-std=c11' '-IC:\\raylib\\raylib\\src' 'main.c' 'C:\\raylib\\raylib\\src\\libraylib.a' '-lopengl32' '-lgdi32' '-lwinmm' '-o' 'build\\main.exe'; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Run Raylib",
+      "type": "process",
+      "command": "${workspaceFolder}\\build\\main.exe",
+      "dependsOn": "Build Raylib",
+      "dependsOrder": "sequence",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

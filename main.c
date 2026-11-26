@@ -105,7 +105,7 @@ void lancamento_player(Bola *player, float distancia, float aceleracao, float dx
     }
 }
 
-void update_mouse(float *dx, float *dy, float *mouseX, float *mouseY, Bola player)
+void update_o_mouse(float *dx, float *dy, float *mouseX, float *mouseY, Bola player)
 {
     *mouseX = GetMouseX();
     *mouseY = GetMouseY();
@@ -229,7 +229,7 @@ int main(void)
         if (IsKeyPressed(KEY_F))
             altera_multiplicador(&tipoForca, &multiplicadorForca);
 
-        update_mouse(&dx, &dy, &mouseX, &mouseY, player);
+        update_o_mouse(&dx, &dy, &mouseX, &mouseY, player);
 
         distancia = sqrt(dx * dx + dy * dy);
 
