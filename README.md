@@ -4,6 +4,8 @@ João Victor Dos Santos Guzatti.
 
 https://github.com/Jvguzatty/Fisica-1-Trabalho--Simulador-de-colis-o-de-particulas
 
+https://canva.link/6nwcueyn50wkj9y
+
 Aqui está as referencias que utilizei para construir o código:
 
 MAIOR INSPIRAÇÃO PARA O PROJETO:
